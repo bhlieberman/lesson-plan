@@ -1,0 +1,16 @@
+node_modules/
+public/js/app/cljs-runtime
+
+/target
+/checkouts
+/src/gen
+
+.calva
+.clj-kondo
+.lsp
+.portal
+.shadow-cljs
+
+
+.hgignore
+.hg/

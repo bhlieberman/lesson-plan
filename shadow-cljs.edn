@@ -1,0 +1,18 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src/dev"
+  "src/main"
+  "src/test"]
+ 
+ :dev-http {8080 "public"}
+
+ :dependencies
+ [[reagent "1.2.0"]
+  [re-com "2.13.2"]]
+
+ :builds
+ {:app {:target :browser
+        :output-dir "public/js/app"
+        :modules {:main {:init-fn org.bartleby.lesson-plan.core/init}}
+        :release {:compiler-options {:optimizations :advanced}}
+        :compiler-options {:warnings {:fn-deprecated false}}}}}
