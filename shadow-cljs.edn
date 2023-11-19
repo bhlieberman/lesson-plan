@@ -2,7 +2,8 @@
 {:source-paths
  ["src/dev"
   "src/main"
-  "src/test"]
+  "src/test"
+  "resources"]
  
  :dev-http {8080 "public"}
 
@@ -11,7 +12,7 @@
   [re-com "2.13.2"]]
 
  :builds
- {:app {:target :browser
+ {:app {:target :esm
         :output-dir "public/js/app"
         :modules {:main {:init-fn org.bartleby.lesson-plan.core/init}}
         :release {:compiler-options {:optimizations :advanced}}

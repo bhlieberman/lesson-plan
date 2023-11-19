@@ -16,5 +16,5 @@
                    :name "student"
                    :rows 10
                    :on-change #(reset! text-input (.. % -target -value))}]
-       [:button.w-25.align-self-center {:type :button
+       [:button.btn.btn-primary.w-25.align-self-center {:type :button
                  :on-click #(reset! original @text-input)} "Rewrite!"]])))
