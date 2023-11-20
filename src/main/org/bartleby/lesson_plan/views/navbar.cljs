@@ -3,20 +3,23 @@
 (defn navbar [current-route]
   [:nav {:class "navbar navbar-expand-lg bg-body-tertiary"}
    [:div {:class "container-fluid"}
-    [:a {:class "navbar-brand", :href "#"} "Lesson plan"]
+    [:a {:class "navbar-brand", :href "#"} [:b "Lesson plan"]]
     [:button {:class "navbar-toggler", :type "button", :data-bs-toggle "collapse", :data-bs-target "#navbarNav", :aria-controls "navbarNav", :aria-expanded "false", :aria-label "Toggle navigation"}
      [:span {:class "navbar-toggler-icon"}]]
     [:div {:class "collapse navbar-collapse", :id "navbarNav"}
      [:ul {:class "navbar-nav"}
       [:li {:class "nav-item"}
        [:a {:class "nav-link active", :aria-current "page", :href "#"
-            :on-click #(reset! current-route :splash)} "Home"]]
+            :on-click #(reset! current-route :splash)} (if (= :home @current-route) [:u "Home"] "Home")]]
+      [:li {:class "nav-item"}
+       [:a {:class "nav-link active", :aria-current "page", :href "#"
+            :on-click #(reset! current-route :story)} (if (= :story @current-route) [:u "The story"] "The story")]]
       [:li {:class "nav-item"}
        [:a {:class "nav-link", :href "#"
-            :on-click #(reset! current-route :notes)} "Notes"]]
+            :on-click #(reset! current-route :notes)} (if (= :notes @current-route) [:u "Notes"] "Notes")]]
       [:li {:class "nav-item"}
        [:a {:class "nav-link", :href "#"
-            :on-click #(reset! current-route :i-do)} "I do"]]
+            :on-click #(reset! current-route :i-do)} (if (= :i-do @current-route) [:u "I do"] "I do")]]
       [:li {:class "nav-item"}
        [:a {:class "nav-link disabled", :aria-disabled "true"
-            :on-click #(reset! current-route :you-do)} "You do"]]]]]])
+            :on-click #(reset! current-route :you-do)} (if (= :you-do @current-route) [:u "You do"] "You do")]]]]]])
