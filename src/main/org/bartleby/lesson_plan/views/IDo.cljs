@@ -27,7 +27,7 @@
                        :style {:margin-top "20px"
                                :margin-bottom "20px"
                                :align-self :center}})]
-        [:> ListGroup
+        [:> ListGroup {:horizontal "md"}
          [:> (.-Item ListGroup) {:on-click (fn [_] (reset! list-items-active? [true false false]))
                                  :active (nth @list-items-active? 0)}
           [hyperlink {:on-click (fn [_] (.. list-item-1-ref -current scrollIntoView))
@@ -35,12 +35,12 @@
                       :style {:color (if (nth @list-items-active? 0) "white" "blue")}}]]
          [:> (.-Item ListGroup) {:on-click (fn [_] (reset! list-items-active? [false true false]))
                                  :active (nth @list-items-active? 1)}
-          [hyperlink {:on-click (fn [e] (.. list-item-2-ref -current scrollIntoView))
+          [hyperlink {:on-click (fn [_] (.. list-item-2-ref -current scrollIntoView))
                       :label "Professional and economic coercion"
                       :style {:color (if (nth @list-items-active? 1) "white" "blue")}}]]
          [:> (.-Item ListGroup) {:on-click (fn [_] (reset! list-items-active? [false false true]))
                                  :active (nth @list-items-active? 2)}
-          [hyperlink {:on-click (fn [e] (.. list-item-3-ref -current scrollIntoView))
+          [hyperlink {:on-click (fn [_] (.. list-item-3-ref -current scrollIntoView))
                       :label "The \"production of the self\""
                       :style {:color (if (nth @list-items-active? 2) "white" "blue")}}]]]
         [:div.container-md.m-4.d-flex.flex-column
