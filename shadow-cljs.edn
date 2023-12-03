@@ -2,13 +2,15 @@
 {:source-paths
  ["src/dev"
   "src/main"
+  "src/gen"
   "src/test"
   "resources"]
  
  :dev-http {8080 "public"}
 
  :dependencies
- [[reagent "1.2.0"]
+ [[cider/cider-nrepl "0.29.0"]
+  [reagent "1.2.0"]
   [re-com "2.13.2"]]
 
  :builds

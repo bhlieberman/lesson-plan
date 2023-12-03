@@ -1,8 +1,9 @@
 (ns org.bartleby.lesson-plan.core
-  (:require [goog.dom :as gdom]
-            [org.bartleby.lesson-plan.views.grr :as views]
-            [reagent.core :as r]
-            [reagent.dom.client :as rdc]))
+  (:require
+   [goog.dom :as gdom]
+   [org.bartleby.lesson-plan.views.grr :as views]
+   [reagent.core :as r]
+   [reagent.dom.client :as rdc]))
 
 (defonce root (rdc/create-root (gdom/getElement "root")))
 

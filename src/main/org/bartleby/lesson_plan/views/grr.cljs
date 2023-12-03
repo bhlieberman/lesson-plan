@@ -7,6 +7,7 @@
             [org.bartleby.lesson-plan.views.YouDo :refer [YouDo]]
             [org.bartleby.lesson-plan.views.Splash :refer [Splash]]
             [org.bartleby.lesson-plan.views.truncate :as trunc]
+            [org.bartleby.lesson-plan.views.daily :as daily]
             [reagent.core :as r]))
 
 (defn CurrentView []
@@ -21,4 +22,5 @@
        :you-do [YouDo change-view]
        :notes [view-markdown]
        :story [story]
+       :daily [daily/DailyLesson change-view]
        :truncate [trunc/rewrite-melville])]))
