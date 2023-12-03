@@ -12,7 +12,7 @@
 
 (defn CurrentView []
   #_{:clj-kondo/ignore [:unresolved-symbol]}
-  (r/with-let [view (r/atom :truncate)
+  (r/with-let [view (r/atom :splash)
                change-view {:on-route #(reset! view %)}]
     [:div [navbar view]
      (case @view
