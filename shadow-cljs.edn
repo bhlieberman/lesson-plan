@@ -2,6 +2,7 @@
 {:source-paths
  ["src/dev"
   "src/main"
+  "src/gen"
   "src/test"
   "resources"]
  

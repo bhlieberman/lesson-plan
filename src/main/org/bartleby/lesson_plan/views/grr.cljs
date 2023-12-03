@@ -7,11 +7,12 @@
             [org.bartleby.lesson-plan.views.YouDo :refer [YouDo]]
             [org.bartleby.lesson-plan.views.Splash :refer [Splash]]
             [org.bartleby.lesson-plan.views.truncate :as trunc]
+            [org.bartleby.lesson-plan.views.daily :as daily]
             [reagent.core :as r]))
 
 (defn CurrentView []
   #_{:clj-kondo/ignore [:unresolved-symbol]}
-  (r/with-let [view (r/atom :splash)
+  (r/with-let [view (r/atom :truncate)
                change-view {:on-route #(reset! view %)}]
     [:div [navbar view]
      (case @view
@@ -21,4 +22,5 @@
        :you-do [YouDo change-view]
        :notes [view-markdown]
        :story [story]
+       :daily [daily/DailyLesson change-view]
        :truncate [trunc/rewrite-melville])]))

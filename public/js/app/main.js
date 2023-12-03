@@ -926,6 +926,8 @@ import "./cljs-runtime/org.bartleby.lesson_plan.views.Splash.js";
 SHADOW_ENV.setLoaded("org.bartleby.lesson_plan.views.Splash.js");
 import "./cljs-runtime/org.bartleby.lesson_plan.views.truncate.js";
 SHADOW_ENV.setLoaded("org.bartleby.lesson_plan.views.truncate.js");
+import "./cljs-runtime/org.bartleby.lesson_plan.views.daily.js";
+SHADOW_ENV.setLoaded("org.bartleby.lesson_plan.views.daily.js");
 import "./cljs-runtime/org.bartleby.lesson_plan.views.grr.js";
 SHADOW_ENV.setLoaded("org.bartleby.lesson_plan.views.grr.js");
 import "./cljs-runtime/module$node_modules$react_dom$client.js";

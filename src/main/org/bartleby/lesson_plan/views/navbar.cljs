@@ -15,6 +15,9 @@
        [:a {:class "nav-link active", :aria-current "page", :href "#"
             :on-click #(reset! current-route :story)} (if (= :story @current-route) [:u "The story"] "The story")]]
       [:li {:class "nav-item"}
+       [:a {:class "nav-link"
+            :on-click #(reset! current-route :daily)} (if (= :daily @current-route) [:u "Daily Lesson Plan"] "Daily lesson plan")]]
+      [:li {:class "nav-item"}
        [:a {:class "nav-link", :href "#"
             :on-click #(reset! current-route :notes)} (if (= :notes @current-route) [:u "Notes"] "Notes")]]
       [:li {:class "nav-item"}
