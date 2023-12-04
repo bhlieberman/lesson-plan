@@ -16,13 +16,10 @@
             :on-click #(reset! current-route :story)} (if (= :story @current-route) [:u "The story"] "The story")]]
       [:li {:class "nav-item"}
        [:a {:class "nav-link"
-            :on-click #(reset! current-route :daily)} (if (= :daily @current-route) [:u "Daily Lesson Plan"] "Daily lesson plan")]]
-      [:li {:class "nav-item"}
-       [:a {:class "nav-link", :href "#"
-            :on-click #(reset! current-route :notes)} (if (= :notes @current-route) [:u "Notes"] "Notes")]]
+            :on-click #(reset! current-route :daily)} (if (= :daily @current-route) [:u "Daily Lesson Plan"] "Daily lesson plan")]] 
       [:li {:class "nav-item"}
        [:a {:class "nav-link", :href "#"
             :on-click #(reset! current-route :i-do)} (if (= :i-do @current-route) [:u "I do"] "I do")]]
       [:li {:class "nav-item"}
-       [:a {:class "nav-link disabled", :aria-disabled "true"
-            :on-click #(reset! current-route :you-do)} (if (= :you-do @current-route) [:u "You do"] "You do")]]]]]])
+       [:a {:class "nav-link", :aria-disabled "true"
+            :on-click #(reset! current-route :truncate)} (if (= :truncate @current-route) [:u "You do"] "You do")]]]]]])

@@ -1,7 +1,7 @@
 (ns org.bartleby.lesson-plan.views.daily
-  (:require [re-com.core :refer [h-box hyperlink hyperlink-href]]))
+  (:require [re-com.core :refer [h-box hyperlink hyperlink-href v-box]]))
 
-(defn DailyLesson [{:keys [on-route]}]
+(defn summary []
   [h-box
    :justify :center
    :align :center
@@ -9,6 +9,40 @@
    :width "1000px"
    :children
    [[:table.table
+     [:thead
+      [:tr 
+       [:th {:colspan "3"} "Context"]]
+      [:tr 
+       [:th {:scope "col"}
+        "Course Title"]
+       [:th {:scope "col"}
+        "Unit Title"]
+       [:th {:scope "col"}
+        "Grade Level"]]]
+     [:tbody
+      [:tr
+       [:td "English"]
+       [:td "Reading \"Bartleby the Scrivener\""]
+       [:td "12th grade"]]
+      [:tr
+       [:th {:scope "row"} "Desired Results"]
+       [:td "CCSS.ELA-Literacy.RL.11-12.4
+Determine the meaning of words and phrases as they are used in the text, including figurative and connotative meanings; analyze the impact of specific word choices on meaning and tone, including words with multiple meanings or language that is particularly fresh, engaging, or beautiful. (Include Shakespeare as well as other authors.)"]
+       [:td "CCSS.ELA-Literacy.RL.11-12.2
+Determine two or more themes or central ideas of a text and analyze their development over the course of the text, including how they interact and build on one another to produce a complex account; provide an objective summary of the text."]]]]]])
+
+(defn DailyLesson [{:keys [on-route]}]
+  [v-box
+   :justify :center
+   :align :center
+   :align-self :center
+   :width "1000px"
+   :children
+   [[:caption "Summary"]
+    [summary]
+    [:br] 
+    [:caption "Daily Lesson Plan"]
+    [:table.table
      [:thead
       [:tr
        [:th {:scope "col"} "Day"]
@@ -70,12 +104,13 @@
        [:td "Students will be able to relate their own experiences of feeling isolated in a job or classroom
              or other professional environment to Bartleby's experience in the office."]
        [:td]]
-      [:tr#day6
+      [:tr#day6 {:row-span "4"}
        [:th {:scope "row"} "Day 6"]
        [:td "Discussion of the second third of the story"]
        [:td "Students will closely read the second third of the story in anticipation of a discussion
              about the plot points through the middle."]
-       [:td "Students will know and understand what the key plot points of the story are."]
+       [:td "Students will know and be able to identify the characters in the story, the setting, and the plot thus far.
+             Students will **describe** the main characters of the story,  and **compare** their relationships to each other, and to the narrative as a whole."] 
        [:td "Students will write a summary of the story, enumerating any vocabulary or content they don't
              understand in a written exposition of two to three paragraphs."]
        [:td]]
@@ -113,7 +148,6 @@
        [:td "Students will participate in a \"modern\" rewriting of Melville."]
        [:td "Students will know about methods for rephrasing the baroque prose of Melville
              in simple, modern terms."]
-       [:td "Students will rewrite a few sentences of Melville, chosen by them,
-             into as few words as possible. This rewrite will then be presented to the class."]
+       [:td "Students will rephrase Melville's prose in simpler terms to gain an understanding of complex grammatical structures."]
        [:td [hyperlink {:label "Rewriting Melville"
                         :on-click #(on-route :truncate)}]]]]]]])
